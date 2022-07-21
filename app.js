@@ -1,62 +1,65 @@
 // DOM Elements
 const addBook = document.querySelector("#new-book");
 let bookContainer = document.querySelector(".books");
-// let bookCards = document.querySelectorAll(".card");
-// card info
-let bookTitle = document.querySelector("#book-title");
-let writer = document.querySelector("#writer");
-let pages = document.querySelector("#pages");
+// card buttons
 const read = document.querySelector(".read")
 const remove = document.querySelector(".remove")
 // form elements
 const form = document.querySelector(".add-book")
-let title = document.querySelector(".title").value;
-let author = document.querySelector(".author").value;
-let pageNum = document.querySelector(".pages").value;
+let title = document.querySelector(".title");
+let author = document.querySelector(".author");
+let pageNum = document.querySelector(".pages");
 const submit = document.querySelector("button[type='submit']");
 
 
 addBook.addEventListener("click", () => {form.classList.remove("out")});
 
+// Add new book after submit button is clicked. 
 submit.addEventListener("click", () => {
-  if (title === "" || author === "" || pageNum === "") return;
+  if (title.value === "" || author.value === "" || pageNum.value === "") return
+  console.log(addToLibrary());
+  displayBook();
   form.classList.add("out");
+  
 });
 
+// Library
 let myLibrary = [];
 
-// the constructor...
+// the book constructor...
 function Book (title, author, pageNum) {
   this.title = title,
   this.author = author,
   this.pageNum = pageNum
 }
 
-// do stuff here
+// Add book to library
 function addToLibrary() {
-  let book = new Book(title, author, pageNum);
+  let book = new Book(title.value, author.value, pageNum.value);
   myLibrary.push(book);
   return myLibrary;
 }
 
-addToLibrary();
-console.log(myLibrary)
-
+// Create new card
 function displayBook() {
-  for(i = 0; i < myLibrary.length; i++) {
     let bookCard = document.createElement("div");
     bookCard.className = "card";
     bookContainer.appendChild(bookCard);
 
-    bookTitle.innerHTML = '"Hello world"';
-    writer.innerHTML = '"Jack of all trades"'
+    let bookTitle = document.createElement("p");
+    let writer = document.createElement("p");
+    let pages = document.createElement("p");
 
-    bookCard.appendChild(bookTitle);
-    bookCard.appendChild(writer);
-    bookCard.appendChild(pages);
-    bookCard.appendChild(read);
-    bookCard.appendChild(remove);
-  }
+    bookTitle.innerHTML = `"${title.value}"`;
+    writer.innerHTML = `${author.value}`;
+    pages.innerHTML = `${pageNum.value} pages`;
+    
+    bookTitle.id = "book-title";
+
+    let read = document.createElement("button");
+    read.innerText = "Read";
+    let remove = document.createElement("button");
+    remove.innerText = "Remove";
+
+    bookCard.append(bookTitle, writer, pages, read, remove);
 }
-
-displayBook();
