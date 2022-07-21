@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: rgb(219, 213, 213);
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkolivegreen;
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#new-book {
+    height: 75px;
+    width: 150px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+#new-book:hover {
+    background:rgb(102, 139, 72)
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    width: 250px;
+    height: 380px;
+    border-radius: 15px;
+    margin: 7px;
+    font-size: 30px;
+    line-height: 60px;
+    user-select: none;
+}
+
+#book-title {
+    text-transform: capitalize;
+}
+
+.card button {
+    width: 150px;
+    height: 35px;
+    margin: 2px;
+    font-size: 16px;
+}
+
+form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 85px;
+    width: min(70vw, 30rem);
+    height: 450px;
+    background: rgb(102, 139, 72);
+    border-radius: 15px;
+    line-height: 40px;
+    font-size: 20px;
+    transition: ease-in 0.5s;
+}
+
+button[type="submit"] {
+    margin-top: 80px;
+    width: min(25vw, 180px);
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="number"] {
+    height: 40px;
+    width: min( 55vw, 350px);
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0.8;
+    text-transform: capitalize;
+}
+
+.out {
+    opacity: 0;
+    z-index: -1000;
+}
+
+.completed {
+    border: solid rgb(102, 139, 72);;
+}

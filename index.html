@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styls.css">
+    <title>Library</title>
+</head>
+<body>
+    <div class="container">
+        <div class="head">
+            <h2>Library</h2>
+        </div>
+        <div class="content">
+            <button id="new-book" onclick="this.blur()">+ Add book</button>
+
+            <div class="books">
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read completed">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+                <div class="card">
+                    <p id="book-title">"the game"</p>
+                    <p id="writer">yim yong</p>
+                    <p id="pages">323 pages</p>
+
+                    <button class="read">Read</button>
+                    <button class="remove">Remove</button>
+                </div>
+            </div>
+
+            <form class="add-book out">
+                <h2>Add new book</h2>
+
+                <label for="title">Title</label>
+                <input class="title" name="title" type="text" required>
+
+                <label for="author">Author</label>
+                <input class="author" name="author" type="text" required>
+
+                <label for="pages">Pages</label>
+                <input class="pages" name="pages" type="number" required>
+            
+                <button type="submit" id="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
